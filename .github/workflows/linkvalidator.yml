@@ -33,4 +33,4 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Validate domains
-        run: python main.py
+        run: pip install httpx && python main.py
