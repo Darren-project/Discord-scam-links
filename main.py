@@ -1,8 +1,4 @@
-import json
 import multiprocessing
-import os
-import socket
-from urllib.parse import urlsplit
 
 import httpx
 from colorama import Fore, init
@@ -25,30 +21,18 @@ class Worker(multiprocessing.Process):
             url = self._job_queue.get()
             if url is None:
                 break
-            fqdn = urlsplit(url).netloc
+
             try:
                 httpx.get(url, headers=HEADERS, follow_redirects=True)
-                ip = socket.gethostbyname(fqdn)
-                print(f"{Fore.GREEN} {url} ({ip}) - Found!")
-                self.valid_domains.append({"url": url, "ip": ip})
-            except (
-                httpx.ConnectError,
-                httpx.ConnectTimeout,
-                httpx.ReadTimeout,
-                httpx.InvalidURL,
-                httpx.ReadError,
-            ):
+                print(f"{Fore.GREEN} {url} - Found!")
+                self.valid_domains.append(url)
+            except (httpx.ConnectError, httpx.ConnectTimeout, httpx.ReadTimeout, httpx.InvalidURL):
+                print(f"{Fore.RED} {url} - Timeout!")
                 if url.startswith("https://"):
-                    self._job_queue.put(f"http://{fqdn}")
-            except httpx.UnsupportedProtocol:
-                print(f"{Fore.RED} {url} - UnsupportedProtocol!")
-            except socket.gaierror:
-                print(f"{Fore.RED} {url} - getaddrinfo failed!")
-
+                    self._job_queue.put(f"http://{url[8:]}")
         print(f"{Fore.BLUE} Worker {self.worker_num} - {len(self.valid_domains) = }.")
-        with open(f"tmp/{self.worker_num}.json", "w") as f:
-            json.dump(self.valid_domains, f)
-        
+        with open(f"{self.worker_num}.txt", "w") as f:
+            f.writelines("\n".join(self.valid_domains))
 
 
 if __name__ == '__main__':
@@ -66,8 +50,6 @@ if __name__ == '__main__':
         for line in r.iter_lines():
             unique_domains.add(f"https://{line.strip()}")
     print(f"{Fore.BLUE} {len(unique_domains) = }.")
-
-    os.makedirs("tmp", exist_ok=True)
 
     for domain in unique_domains:
         job_queue.put(domain)
