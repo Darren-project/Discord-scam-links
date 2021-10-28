@@ -28,5 +28,6 @@ jobs:
       - name: Combining all worker file into one
         run: python helper.py && ls
       # Update the repo
-      - name: Update repo
-        uses: ad-m/github-push-action@v0.6.0
+      - name: Deploy to a Git Repo
+        uses: tagus/git-deploy@v0.3.2
+
