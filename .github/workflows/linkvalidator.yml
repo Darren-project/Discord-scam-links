@@ -32,6 +32,9 @@ jobs:
       - name: Combining all worker file into one
         run: python helper.py && ls
       # Update the repo
-      - name: Deploy to a Git Repo
-        uses: tagus/git-deploy@v0.3.2
+      - name: upload
+        uses: actions/upload-artifact@v2
+        with:
+         name: blocklist.txt
+         path: ./nitroscamlinks.txt
 
