@@ -38,7 +38,4 @@ jobs:
         run: python helper.py && ls
       # Update the repo
       - name: Update repo
-        uses: mikeal/publish-to-github-action@master
-        env:
-           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-           BRANCH_NAME: 'main'
+        uses: ad-m/github-push-action@v0.6.0
