@@ -29,9 +29,6 @@ jobs:
         with:
           python-version: '3.x' # Version range or exact version of a Python version to use, using SemVer's version range syntax
           architecture: 'x64' # optional x64 or x86. Defaults to x64 if not specified
-      - uses: mikeal/publish-to-github-action@master
-        env:
-         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
 
       # Runs a single command using the runners shell
@@ -40,3 +37,8 @@ jobs:
       # Runs a single command using the runners shell
       - name: Combining all worker file into one
         run: python helper.py && ls
+      # Update the repo
+      - name: Update repo
+      - uses: mikeal/publish-to-github-action@master
+        env:
+           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
