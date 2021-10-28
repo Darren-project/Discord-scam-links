@@ -31,7 +31,7 @@ class Worker(multiprocessing.Process):
                 if url.startswith("https://"):
                     self._job_queue.put(f"http://{url[8:]}")
         print(f"{Fore.BLUE} Worker {self.worker_num} - {len(self.valid_domains) = }.")
-        with open(f"{self.worker_num}.txt", "w") as f:
+        with open("worker_" + str(self.worker_num) + ".txt", "w") as f:
             f.writelines("\n".join(self.valid_domains))
 
 
