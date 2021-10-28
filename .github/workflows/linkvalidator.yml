@@ -35,5 +35,5 @@ jobs:
       - name: Validate domains
         run: pip install httpx colorama && python main.py
       # Runs a single command using the runners shell
-      - name: Parsing returned json
-        run: ls
+      - name: Combining all worker file into one
+        run: python helper.py && ls
