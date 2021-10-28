@@ -38,7 +38,7 @@ jobs:
       - name: Combining all worker file into one
         run: python helper.py && ls
       # Update the repo
-      - uses: mikeal/publish-to-github-action@master
       - name: Update repo
+        uses: mikeal/publish-to-github-action@master
         env:
            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
