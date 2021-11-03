@@ -1,2 +1,3 @@
 ALWAYS ADD LINK TO THE TOP OF THE FILE NOT THE BOTTOM
-File name: nitroscamlink.txt
+
+File name: nitroscamlinks.txt
