@@ -1,3 +1,4 @@
+import os
 helper = []
 f = open("nitroscamlinks.txt", "r")
 for f1 in f:
