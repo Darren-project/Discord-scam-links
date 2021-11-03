@@ -1,4 +1,3 @@
-import os
 helper = []
 f = open("nitroscamlinks.txt", "r")
 for f1 in f:
@@ -16,8 +15,8 @@ f.write('')
 f.close()
 f = open("nitroscamlinks.txt", "a")
 for line in df:
-  #print(line)
+  print(line)
   f.write(line + '\n')
 f.close()
-os.system('cat nitroscamlinks.txt')
+
   
