@@ -1,3 +1,5 @@
 f = open("nitroscamlinks.txt", "r")
 df = set(f.read())
 f.close()
+df = df.replace('https://','')
+print(df)
