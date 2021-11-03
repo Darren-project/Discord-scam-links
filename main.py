@@ -1,4 +1,7 @@
+helper = []
 f = open("nitroscamlinks.txt", "r")
-df = set(str(f.read()).replace('https://',''))
+df = set(str(f.read()))
 f.close()
-print(df)
+for i in fd:
+  helper.append(i.replace('https://',''))
+print(helper)
