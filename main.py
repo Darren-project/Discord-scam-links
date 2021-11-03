@@ -1,5 +1,7 @@
 helper = []
 f = open("nitroscamlinks.txt", "r")
-df = set(str(f.read()))
+for line in f.read():
+   helper.append(line)
+df = set(helper)
 f.close()
 print(df)
