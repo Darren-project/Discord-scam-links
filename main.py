@@ -10,4 +10,5 @@ for i in helper:
 helper = helper2
 df = helper
 f.close()
-print(df)
+for line in df:
+  print(line)
