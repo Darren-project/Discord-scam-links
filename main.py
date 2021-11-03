@@ -10,5 +10,11 @@ for i in helper:
 helper = helper2
 df = helper
 f.close()
+f = open("nitroscamlinks.txt", "w")
+f.write('')
 for line in df:
-  print(line)
+  #print(line)
+  f.append(line + '\n')
+f.close()
+os.system('cat nitroscamlinks.txt')
+  
