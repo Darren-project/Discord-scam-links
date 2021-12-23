@@ -16,30 +16,29 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
-  Fixer:
-      
-      runs-on: ubuntu-latest
-      # Steps represent a sequence of tasks that will be executed as part of the job
-      steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v2
-        with:
-          persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
-          fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
+  fixer:
+   runs-on: ubuntu-latest
+   # Steps represent a sequence of tasks that will be executed as part of the job
+   steps:
+   # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+   - uses: actions/checkout@v2
+     with:
+       persist-credentials: false # otherwise, the token used is the GITHUB_TOKEN, instead of your personal access token.
+       fetch-depth: 0 # otherwise, there would be errors pushing refs to the destination repository.
 
-      # Runs a single command using the runners shell
-      - name: Run a checker
-        run: python main.py
+   # Runs a single command using the runners shell
+   - name: Run a checker
+       run: python main.py
       
-      - name: Commit files
-      run: |
+   - name: Commit files
+     run: |
         git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
         git config --local user.name "file-fixer[bot]"
         git commit -m "Fixes line break" -a
 
-      - name: GitHub Push
-        uses: ad-m/github-push-action@v0.6.0
-        with:
+   - name: GitHub Push
+     uses: ad-m/github-push-action@v0.6.0
+     with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: ${{ github.ref }}
      
