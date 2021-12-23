@@ -16,7 +16,6 @@ f.write('')
 f.close()
 f = open("nitroscamlinks.txt", "a")
 for line in df:
-  print(line)
   f.write(line + '\n')
 f.close()
 os.system('ls')
