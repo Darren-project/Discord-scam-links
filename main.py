@@ -24,8 +24,10 @@ f.write('')
 f.close()
 f = open("nitroscamlinks.json", "a")
 f.write('{')
+f.write('urls:{')
 for line in df:
   f.write('"' + line + '"' + ',')
+f.write('}')
 f.write('}')
 f.close()
 with open('nitroscamlinks.json', 'r') as handle:
