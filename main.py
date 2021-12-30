@@ -23,28 +23,10 @@ f = open("nitroscamlinks.json", "w")
 f.write('')
 f.close()
 f = open("nitroscamlinks.json", "a")
-f.write('[{')
-f.write('"urls":{')
-lines = len(df)
-num = 0
-for line in df:
-  num = num + 1
-  if num == lines:
-     f.write('"' + line + '"')
-  else:
-     f.write('"' + line + '"' + ',')
-f.write('}')
-f.write('}]')
-f.close()
-with open('nitroscamlinks.json', 'r') as handle:
-    parsed = json.load(handle)
-    parsed = json.dumps(parsed, indent=4, sort_keys=True)
-    handle.close()
-f = open("nitroscamlinks.json", "w")
-f.write('')
-f.close()
-f = open("nitroscamlinks.json", "a")
-f.write(parsed)
+data = {
+         "urls": df
+       }
+json.dump(data, f, ensure_ascii=False, indent=4)
 f.close()
 os.system('ls')
   
