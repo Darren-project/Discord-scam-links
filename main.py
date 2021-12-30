@@ -27,7 +27,7 @@ f.write('{')
 f.write('"urls":{')
 for line in df:
   f.write('"' + line + '"' + ',')
-f.write('\b\b')
+#f.write('\b\b')
 f.write('}')
 f.write('}')
 f.close()
