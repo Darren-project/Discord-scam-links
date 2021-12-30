@@ -29,7 +29,7 @@ lines = len(df)
 num = 0
 for line in df:
   num = num + 1
-  if num = lines:
+  if num == lines:
      f.write('"' + line + '"')
   else:
      f.write('"' + line + '"' + ',')
