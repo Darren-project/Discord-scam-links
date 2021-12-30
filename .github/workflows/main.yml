@@ -35,7 +35,7 @@ jobs:
         git add .
         git config --local user.email "41898282+file-fixer[bot]@users.noreply.github.com"
         git config --local user.name "file-fixer[bot]"
-        git commit -m "Fixes line break" -a
+        git commit -m "Fixes line break and auto generate json" -a
 
    - name: GitHub Push
      uses: ad-m/github-push-action@v0.6.0
