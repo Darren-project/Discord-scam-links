@@ -18,5 +18,14 @@ f = open("nitroscamlinks.txt", "a")
 for line in df:
   f.write(line + '\n')
 f.close()
+f = open("nitroscamlinks.json", "w")
+f.write('')
+f.close()
+f = open("nitroscamlinks.json", "a")
+f.write('{')
+for line in df:
+  f.write('"' + line + "'" + ',')
+f.write('}')
+f.close()
 os.system('ls')
   
