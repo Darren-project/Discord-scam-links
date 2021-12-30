@@ -30,15 +30,5 @@ for line in df:
 f.write('}')
 f.write('}')
 f.close()
-with open('nitroscamlinks.json', 'r') as handle:
-    parsed = json.load(handle)
-    parsed = json.dumps(parsed, indent=4, sort_keys=True)
-    handle.close()
-f = open("nitroscamlinks.json", "w")
-f.write('')
-f.close()
-f = open("nitroscamlinks.json", "a")
-f.write(parsed)
-f.close()
 os.system('ls')
   
