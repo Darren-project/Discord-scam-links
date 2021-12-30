@@ -1,3 +1,4 @@
+import json
 import os
 helper = []
 f = open("nitroscamlinks.txt", "r")
