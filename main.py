@@ -20,7 +20,7 @@ for line in d2.split():
 for line in d3.split():
     helper.append(line)
     print("Adding " + line + " to helper list")
-for line in d4.split():
+for line in d4:
     helper.append(line)
     print("Adding " + line + " to helper list")
 helper = set(helper)
