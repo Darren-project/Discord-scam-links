@@ -14,19 +14,19 @@ for f1 in f:
     helper.append(line.replace('"]','').replace('"','').replace(',','\n'))
     print("Adding " + line + " to helper list")
 for line in d1.split():
-    helper.append(line.replace('"]','').replace('"','').replace(',','\n')
+    helper.append(line.replace('"]','').replace('"','').replace(',','\n'))
     print("Adding " + line + " to helper list")
 for line in d2.split():
-    helper.append(line.replace('"]','').replace('"','').replace(',','\n')
+    helper.append(line.replace('"]','').replace('"','').replace(',','\n'))
     print("Adding " + line + " to helper list")
 for line in d3.split():
-    helper.append(line.replace('"]','').replace('"','').replace(',','\n')
+    helper.append(line.replace('"]','').replace('"','').replace(',','\n'))
     print("Adding " + line + " to helper list")
 for line in d4:
-    helper.append(line.replace('"]','').replace('"','').replace(',','\n')
+    helper.append(line.replace('"]','').replace('"','').replace(',','\n'))
     print("Adding " + line + " to helper list")
 for line in d5:
-    helper.append(line.replace('"]','').replace('"','').replace(',','\n')
+    helper.append(line.replace('"]','').replace('"','').replace(',','\n'))
     print("Adding " + line + " to helper list")
 helper = set(helper)
 helper2 = []
