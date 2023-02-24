@@ -11,22 +11,22 @@ helper = []
 f = open("nitroscamlinks.txt", "r")
 for f1 in f:
  for line in f1.split():
-    helper.append(line)
+    helper.append(line.replace('"]','').replace('"',''))
     print("Adding " + line + " to helper list")
 for line in d1.split():
-    helper.append(line)
+    helper.append(line.replace('"]','').replace('"',''))
     print("Adding " + line + " to helper list")
 for line in d2.split():
-    helper.append(line)
+    helper.append(line.replace('"]','').replace('"',''))
     print("Adding " + line + " to helper list")
 for line in d3.split():
-    helper.append(line)
+    helper.append(line.replace('"]','').replace('"',''))
     print("Adding " + line + " to helper list")
 for line in d4:
-    helper.append(line)
+    helper.append(line.replace('"]','').replace('"',''))
     print("Adding " + line + " to helper list")
 for line in d5:
-    helper.append(line)
+    helper.append(line.replace('"]','').replace('"',''))
     print("Adding " + line + " to helper list")
 helper = set(helper)
 helper2 = []
