@@ -5,10 +5,12 @@ f = open("nitroscamlinks.txt", "r")
 for f1 in f:
  for line in f1.split():
     helper.append(line)
+    print("Adding " + line + " to helper list")
 helper = set(helper)
 helper2 = []
 for i in helper:
-    helper2.append(i.replace('https://',''))
+    helper2.append(i.replace('https://','').replace('http://',''))
+    print("Removing either https:// or http:// and adding " + line + " to helper list")
 helper = helper2
 df = helper
 f.close()
