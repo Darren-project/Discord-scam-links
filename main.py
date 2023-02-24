@@ -4,6 +4,8 @@ d1 = requests.get("https://raw.githubusercontent.com/BuildBot42/discord-scam-lin
 d2 = requests.get("https://raw.githubusercontent.com/DevSpen/scam-links/master/src/links.txt").text
 d3 = requests.get("https://raw.githubusercontent.com/Dogino/Discord-Phishing-URLs/main/scam-urls.txt").text
 d4 = requests.get("https://raw.githubusercontent.com/nikolaischunk/discord-phishing-links/main/domain-list.json").json()["domains"]
+d5raw = requests.get("https://raw.githubusercontent.com/Bananonz/discord-scam-links/main/links.json").text
+d5 = d5raw.strip('][').strip('["').split('","')
 import os
 helper = []
 f = open("nitroscamlinks.txt", "r")
@@ -21,6 +23,9 @@ for line in d3.split():
     helper.append(line)
     print("Adding " + line + " to helper list")
 for line in d4:
+    helper.append(line)
+    print("Adding " + line + " to helper list")
+for line in d5:
     helper.append(line)
     print("Adding " + line + " to helper list")
 helper = set(helper)
