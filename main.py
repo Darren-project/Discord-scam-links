@@ -10,7 +10,7 @@ helper = set(helper)
 helper2 = []
 for i in helper:
     helper2.append(i.replace('https://','').replace('http://',''))
-    print("Removing either https:// or http:// and adding " + line + " to helper list")
+    print("Removing either https:// or http:// and adding " + i + " to helper2 list")
 helper = helper2
 df = helper
 f.close()
