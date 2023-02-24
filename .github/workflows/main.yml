@@ -28,7 +28,7 @@ jobs:
 
    # Runs a single command using the runners shell
    - name: Run a checker
-     run: pip install request && python main.py
+     run: pip install requests && python main.py
       
    - name: Commit files
      run: |
