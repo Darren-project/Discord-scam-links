@@ -25,6 +25,9 @@ for i in helper:
     helper2.append(i.replace('https://','').replace('http://',''))
     print("Removing either https:// or http:// and adding " + i + " to helper2 list")
 helper = helper2
+dd = []
+[dd.append(x) for x in helper if x not in dd] 
+helper = dd
 df = helper
 f.close()
 f = open("nitroscamlinks.txt", "w")
