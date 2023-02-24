@@ -1,8 +1,8 @@
 import json
 import requests
-d1 = requests.get("https://raw.githubusercontent.com/BuildBot42/discord-scam-links/main/list.txt").text()
-d2 = requests.get("https://raw.githubusercontent.com/DevSpen/scam-links/master/src/links.txt").text()
-d3 = requests.get("https://raw.githubusercontent.com/Dogino/Discord-Phishing-URLs/main/scam-urls.txt").text()
+d1 = requests.get("https://raw.githubusercontent.com/BuildBot42/discord-scam-links/main/list.txt").text
+d2 = requests.get("https://raw.githubusercontent.com/DevSpen/scam-links/master/src/links.txt").text
+d3 = requests.get("https://raw.githubusercontent.com/Dogino/Discord-Phishing-URLs/main/scam-urls.txt").text
 import os
 helper = []
 f = open("nitroscamlinks.txt", "r")
