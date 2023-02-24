@@ -6,6 +6,9 @@ d3 = requests.get("https://raw.githubusercontent.com/Dogino/Discord-Phishing-URL
 d4 = requests.get("https://raw.githubusercontent.com/nikolaischunk/discord-phishing-links/main/domain-list.json").json()["domains"]
 d5raw = requests.get("https://raw.githubusercontent.com/Bananonz/discord-scam-links/main/links.json").text
 d5 = d5raw.strip('][').replace('["','').replace('"]','').replace('"','').replace(']','').split(',')
+d6raw = requests.get("https://raw.githubusercontent.com/Bananonz/discord-scam-links/main/links.json").text
+d6raw = d6raw.replace("\n","")
+d6 = d6raw.strip('][').replace('["','').replace('"]','').replace('"','').replace(']','').split(',')
 import os
 helper = []
 f = open("nitroscamlinks.txt", "r")
